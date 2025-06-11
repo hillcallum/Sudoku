@@ -1,0 +1,83 @@
+Summarise your findings here (see specification).
+
+We are asked to determine which mystery board matches each of the
+three 'difficulty' descriptions in Question 5.
+
+To measure a sudoku board's difficulty, there are a number of
+different methods:
+
+- For example, it could be the number of 'given'
+  digits in the sudoku board - the more pre-supplied
+  digits, the easier the puzzle
+- Alternatively, it may be the techniques used in
+  solving the sudoku board that determines its
+  difficulty - in sudoku, there are 'advanced' techniques,
+  such as 'swordfish' or 'X-wing', that are generally considered
+  more complex than techniques, such as 'crosshatching'.
+
+Under our sudoku solver, we can only determine whether a move is
+'valid' or not - a move is considered valid if it satisfies the
+Boolean make_move function in our sudoku.cpp file.
+
+Given this, I will determine each board's difficulty by considering
+two different scoring elements:
+- (1) A 'move score' score - for each board, we calculate how many
+      valid moves there are at the beginning of the puzzle.
+- (2) A 'backwards recursion' score - for each board, we count how
+      many times we went back to a previously placed digit and removed
+      it as we determined that it was no longer valid later on.
+
+The results for each board include:
+
+Easy
+
+Move score: 190
+Backwards recursion score: 2116
+
+Medium
+
+Move score: 204
+Backwards recursion score: 15605
+
+Mystery1
+
+Move score: 227
+Backwards recursion score: 421488
+
+Mystery2
+
+Move score: 205
+Backwards recursion score: 11532
+
+Mystery3
+
+Move score: 222
+Backwards recursion score: 14076
+
+
+
+Conclusion:
+
+Given the above, and combined with the results from Question 4, we can
+see that Mystery2 is the sudoku board that is 'impossible to
+solve'.
+
+In determining which of Mystery1 and Mystery3 is categorised with a
+difficulty of 'hard' and 'extremely hard', we can see that whilst the
+move scores for each are very close (a difference of only 5), the
+backwards recursion score for Mystery1 is almost 30x higher than
+Mystery3. Therefore, I believe that Mystery1 is the board with 'extremely hard'
+difficulty and Mystery3 is the board with 'hard' difficulty.
+
+Notably, the backwards recursion score for Mystery3 is lower than the
+backwards recursion score for the sudoku board classified as 'Medium'
+difficulty. However, the move score is greater, perhaps suggesting
+that this is a better proxy for determining a sudoku board's difficulty.
+
+This is certainly not conclusive in and of itself, as these two
+scoring elements in conjunction with other methods (including those
+listed above) will provide a more detailed and nuanced view of a
+sudoku board's difficulty.   
+
+
+
