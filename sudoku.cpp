@@ -329,7 +329,7 @@ bool make_move(const char* position, const char digit, char board[9][9])
   const int row = position[0] - 'A';
   const int column = position[1] - '1';
 
-  // Use centralized validation function to check all conditions
+  // Use validation function to check all conditions
   if (!is_move_valid(row, column, digit, board)) 
   {
     return false;
